@@ -18,6 +18,12 @@ public class Main {
 		System.out.println("e3");
 		System.out.println(e3);
 		
+		Address a1 = new Address(1234, "Happy Street", "Super City",  12345);
+		System.out.println(a1);
+		
+		Team pr1 = new Team (5, "Bears", "Coach Vinay");
+		Player pl1 = new Player(134, pr1);
+		System.out.println(pl1);
 		
 
 	}

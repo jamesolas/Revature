@@ -50,8 +50,8 @@ public class ListExample {
 			
 			Collections.sort(li);
 			System.out.println(li);
-			System.out.println(Collections.binarySearch(li, 5));
-			System.out.println(Collections.binarySearch(li, 44));
+			System.out.println(Collections.binarySearch(li, 5) +  " Binary search for the number 5.");
+			System.out.println(Collections.binarySearch(li, 44) + " Binary search for the number 44.");
 		
 		
 	}

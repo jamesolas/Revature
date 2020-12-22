@@ -25,5 +25,7 @@ public class Player extends Person{
 	public String toString() {
 		return "Player [rating=" + rating + ", team=" + team + "]";
 	}
+	
+	
 
 }
