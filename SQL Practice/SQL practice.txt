@@ -1,0 +1,126 @@
+select * from player;
+select * from team;
+
+select p.player_id, p.player_name, t.team_id, t.team_name
+from player p
+join team t
+on p.team_id = t.team_id;
+
+select p.player_id, p.player_name, t.team_id, t.team_name
+from player p
+left join team t
+on p.team_id = t.team_id;
+
+select p.player_id , p.player_name , t.team_id, t.team_name
+from player p
+right join team t
+on p.team_id = t.team_id;
+
+select p.player_id, p.player_name, t.team_id, t.team_name
+from player p
+full outer join team t
+on p.team_id = t.team_id;
+
+select 
+	p.player_id, p.player_name,
+	sum (points) as total
+from player p
+group by p.player_id
+order by sum(points) desc;
+
+select p.player_id, p.player_name
+from player p
+where p.player_id > 1
+order by p.player_name;
+
+select 
+	p.player_id, p.player_name,
+	sum (points)
+from player p
+group by p.player_id
+having sum(points) > 30;
+
+select p.player_id, p.player_name, t.team_id, t.team_name
+from player p
+cross join team t;
+
+select max (points)
+from player p;
+
+select min (points)
+from player p;
+
+select count(p.player_id)
+from player p
+where (points) > 26;
+
+select avg (points)
+from player p;
+
+select concat(p.player_name, ' ', p.player_lastname) as "Full name"
+from player p;
+
+select left('abc',1);
+
+select p.player_id, p.player_name, left(player_name, 2)
+from player p;
+
+select abs(-10);
+
+select ceil(1.4);
+
+select floor(1.5);
+
+select round(1.5);
+
+select sign(-5.5);
+
+select trunc(15.8);
+
+select to_date('20201222', 'YYYYMMDD');
+
+select to_date('12 22 2020', 'MMDDYYYY');
+
+select to_date('Dec 22 2020', 'Mon DD YYYY');
+
+select * from team
+union
+select * from team2
+order by (team_id) asc;
+
+select * from team
+union all
+select * from team2
+order by (team_id) asc;
+
+select *
+from team
+intersect
+select *
+from team2
+order by team_id;
+
+select team_id, team_name
+from team
+except
+select team2_id, team2_name
+from team2;
+
+insert into team (team_id, team_name)
+values
+	('104','Browns'),
+	('105','Braves');
+
+update team
+set 
+	team_name = 'Cavaliers'
+where team_id= 101;
+
+update player
+set points = '35'
+from team
+where team_name = 'Cavaliers';
+
+delete from team
+where team_id = 105;
+	
