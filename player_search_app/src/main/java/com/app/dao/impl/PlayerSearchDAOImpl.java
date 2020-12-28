@@ -211,7 +211,8 @@ public class PlayerSearchDAOImpl implements PlayerSearchDAO {
 			String sql="select player_id, age, player_name, team_name, points, dob, contact from test.player where dob=?";
 			PreparedStatement preparedStatement  = connection.prepareStatement(sql);
 			Player player = new Player();
-			preparedStatement.setDate(1, new java.sql.Date(player.getDob().getTime()));
+			Date date = Date.valueOf(dob);
+			preparedStatement.setDate(1, date);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while(resultSet.next()){
 				
@@ -219,7 +220,7 @@ public class PlayerSearchDAOImpl implements PlayerSearchDAO {
 				player.setPlayer_name(resultSet.getString("player_name"));
 				player.setAge(resultSet.getInt("age"));
 				player.setPoints(resultSet.getInt("points"));
-				//player.setDob(resultSet.getDate("dob"));
+				player.setDob(resultSet.getDate("dob"));
 				player.setContact(resultSet.getLong("contact"));
 				playersList.add(player);
 			}

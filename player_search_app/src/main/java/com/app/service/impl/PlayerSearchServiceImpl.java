@@ -93,7 +93,7 @@ public class PlayerSearchServiceImpl implements PlayerSearchService {
 	@Override
 	public List<Player> getPlayersByDob(String dob) throws BusinessException {
 		List<Player> dobPlayersList=null;
-		if(dob!=null) {
+		if(dob != null && dob.matches("[0-9]{4}-[0-9]{2}-[0-9]{2}")) {
 			dobPlayersList=playerSearchDAO.getPlayersByDob(dob);
 		}else {
 			throw new BusinessException("Entered dob "+dob+" is INVALID");
