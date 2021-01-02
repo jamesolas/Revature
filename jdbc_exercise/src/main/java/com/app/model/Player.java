@@ -76,8 +76,8 @@ public class Player {
 		this.gender = gender;
 	}
 	
-	public String getAge() {
-		return gender;
+	public int getAge() {
+		return age;
 	}
 
 	public void setAge(int age) {

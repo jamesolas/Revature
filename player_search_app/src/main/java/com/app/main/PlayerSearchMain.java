@@ -33,6 +33,7 @@ public class PlayerSearchMain {
 				ch=Integer.parseInt(sc.nextLine());
 			}catch(NumberFormatException e) {}
 			switch (ch) {
+			
 			case 1: System.out.println("Enter player ID to get player details.");
 				try {
 					int player_id = Integer.parseInt(sc.nextLine());

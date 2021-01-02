@@ -18,13 +18,16 @@ public class PlayerCrudDAOImpl implements PlayerCrudDAO{
 	public int createPlayer(Player player) throws BusinessException{
 		int c = 0;
 		try(Connection connection = PostresqlConnection.getConnection()){
-			String sql = "insert into test.player(player_id, player_name, points, dob, contact) values(?,?,?,?,?)";
+			String sql = "insert into test.player(player_id, player_name, points, dob, contact, gender) values(?,?,?,?,?,?)";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setInt(1, player.getPlayer_id());
 			preparedStatement.setString(2, player.getPlayer_name());
-			preparedStatement.setInt(3, player.getPoints());
+			preparedStatement.setInt(3, player.getPoints()); 
 			preparedStatement.setDate(4, new java.sql.Date (player.getDob().getTime())); //util.Date to sql.Date
 			preparedStatement.setLong(5, player.getContact());
+			preparedStatement.setString(6, player.getGender());
+			preparedStatement.setInt(7, player.getAge());
+		//	preparedStatement.setString(8, player.getTeam());
 			
 			c = preparedStatement.executeUpdate();
 			
