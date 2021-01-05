@@ -1,0 +1,3 @@
+//Get Class using reflection
+Class<?> concreteClass = ConcreteClass.class;
+concreteClass = new ConcreteClass(5).getClass();

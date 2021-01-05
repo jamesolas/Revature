@@ -7,6 +7,7 @@ import com.app.exception.BusinessException;
 import com.app.model.Player;
 
 public interface PlayerSearchService {
+	
 	public Player getPlayerById(int player_id) throws BusinessException;
 	public Player getPlayerByContact(long contact) throws BusinessException;
 	public List<Player> getAllPlayers() throws BusinessException;

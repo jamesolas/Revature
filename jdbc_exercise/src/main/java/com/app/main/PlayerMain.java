@@ -1,5 +1,6 @@
 package com.app.main;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
@@ -10,7 +11,9 @@ import com.app.model.Player;
 
 public class PlayerMain {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException, InterruptedException {
+		new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+		
 		PlayerCrudDAOImpl dao = new PlayerCrudDAOImpl();
 		PlayerSearchDAOImpl dao1 = new PlayerSearchDAOImpl();
 		

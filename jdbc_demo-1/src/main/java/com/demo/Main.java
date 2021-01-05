@@ -28,7 +28,7 @@ public class Main {
 			Statement statement = connection.createStatement();
 			String sql = "select player_id, player_name, team_id from test.player order by player_id desc";
 			
-			//step 4
+			//step 4 - execute statement
 			ResultSet resultSet=statement.executeQuery(sql);
 			System.out.println("Query executed");
 			

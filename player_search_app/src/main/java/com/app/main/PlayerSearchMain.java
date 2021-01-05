@@ -16,7 +16,7 @@ public class PlayerSearchMain {
 		System.out.println("-------------------------------------");
 		int ch = 0;
 		PlayerSearchService playerSearchService = new PlayerSearchServiceImpl();
-		do {
+		do {    
 			System.out.println("Player Search Menu");
 			System.out.println("====================");
 			System.out.println("1)By Id");
@@ -28,10 +28,11 @@ public class PlayerSearchMain {
 			System.out.println("7)By Player Name");
 			System.out.println("8)Show All Players");
 			System.out.println("9)Exit");
-			System.out.println("10)Please enter appropriate choice.");
+			System.out.println("Please enter appropriate choice.");
 			try {
 				ch=Integer.parseInt(sc.nextLine());
 			}catch(NumberFormatException e) {}
+			
 			switch (ch) {
 			
 			case 1: System.out.println("Enter player ID to get player details.");
